@@ -1,5 +1,8 @@
 # pfstudio-front-end
 
+## Description
+攀峰主站前端
+
 ## Project setup
 ```
 npm install
