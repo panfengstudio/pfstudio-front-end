@@ -14,14 +14,14 @@
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             
-            <b-nav-item-dropdown right v-if="!token" v-model="token">
+            <b-nav-item-dropdown right v-if="token" v-model="token">
               <!-- Using 'button-content' slot -->
               <template slot="button-content"><em>User</em></template>
               <b-dropdown-item href="#">Profile</b-dropdown-item>
               <b-dropdown-item href="#">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
 
-            <b-nav-item right v-if="token" >
+            <b-nav-item right v-if="!token" >
               <!-- Using 'button-content' slot -->
               <template slot="button-content"><em></em></template>
               <router-link to="/login" class="login">登陆</router-link>
@@ -38,17 +38,29 @@
 <script>
   export default {
     props: {
-
+        token: {}
     },
     data() {
-      return {
-        token: {},
-      }
+        return {
+            user: {},
+        }
     },
     methods: {
-      
+        
     },
-  }
+    async created() {
+        if (this.$route.query.token !== null) {
+          localStorage.token = this.$route.query.token;
+        }
+        if (localStorage.token !== null) {
+          const token = localStorage.token;
+          var json = {"token": token}
+          const res = await this.$http.post("/api/users", json);
+          this.user = res.data;
+          this.$router.push("/");
+        }
+    },
+}
 </script>
 
 <style lang="css">
