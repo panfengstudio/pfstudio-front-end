@@ -12,9 +12,12 @@
             <b-nav-item href="http://docs.ayang818.top" target="_blank">工作室云盘</b-nav-item>
           </b-navbar-nav>
 
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown right v-if="user.id" v-model="user">
+          <b-navbar-nav>
+            <b-nav-item href="https://github.com/panfengstudio" target="_blank">开源项目</b-nav-item>
+          </b-navbar-nav>
+
+           <b-navbar-nav class="ml-auto" v-if="user.id">
+            <b-nav-item-dropdown right  v-model="user">
               <!-- Using 'button-content' slot -->
               <template slot="button-content">
             <img :src="user.avatarUrl" class="avatar">                
@@ -22,14 +25,16 @@
               <b-dropdown-item href="#">签到</b-dropdown-item>
               <b-dropdown-item href="#" @click="exit()">退出登陆</b-dropdown-item>
             </b-nav-item-dropdown>
-
-            <b-nav-item right v-if="!user.id" >
-              <!-- Using 'button-content' slot -->
-              <template slot="button-content"><em></em></template>
-              <router-link to="/login" class="login">登陆</router-link>
-            </b-nav-item>
-
           </b-navbar-nav>
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto" v-if="!user.id">
+            <b-nav-item right>
+              <!-- Using 'button-content' slot -->
+              <router-link to="/login" class="login"><b-button>登陆</b-button></router-link>
+            </b-nav-item>
+          </b-navbar-nav>
+
         </b-collapse>
       </b-navbar>
     </div>
@@ -70,8 +75,6 @@
     text-decoration: none !important;
     outline: none;
     padding: 3px 10px;
-    border: 1px solid #fff;
-    border-radius: 100px;
   }
 
   .avatar {
