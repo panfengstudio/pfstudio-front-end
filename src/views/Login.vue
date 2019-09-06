@@ -11,7 +11,7 @@
                 <a href="#" class="link">
                     <span class="iconfont icon-QQ qq-icon" id="qq-icon">
                     </span>
-                    <p style="text-align: center;">QQ登陆</p>
+                    <p style="text-align: center;">QQ登陆(未完善)</p>
                 </a>
             </div>
 

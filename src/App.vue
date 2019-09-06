@@ -3,7 +3,7 @@
     <div class="navigate">
 
       <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="/"><img src="https://upload-serve.oss-cn-beijing.aliyuncs.com/image/pflogo.png" class="icon">  攀峰工作室</b-navbar-brand>
+        <b-navbar-brand><router-link to="/" class="link-like-1"><img src="https://upload-serve.oss-cn-beijing.aliyuncs.com/image/pflogo.png" class="icon">攀峰工作室</router-link></b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -12,8 +12,13 @@
             <b-nav-item href="http://docs.ayang818.top" target="_blank">工作室云盘</b-nav-item>
           </b-navbar-nav>
 
+        
           <b-navbar-nav>
             <b-nav-item href="https://github.com/panfengstudio" target="_blank">开源项目</b-nav-item>
+          </b-navbar-nav>
+
+          <b-navbar-nav>
+            <b-nav-item @click="pushToComment()">留言</b-nav-item>
           </b-navbar-nav>
 
            <b-navbar-nav class="ml-auto" v-if="user.id">
@@ -53,6 +58,14 @@
         exit() {
           localStorage.clear();
           location.href="/";
+        },
+        pushToComment() {
+          this.$router.push({
+            path: '/comments',
+            query: {
+              page: 1
+            }
+          })
         }
     },
     async created() {
@@ -90,5 +103,22 @@
   .icon {
     width: 38px;
     height: 38px;
+    margin-right: 4px;
+  }
+
+  .link-like {
+    color: rgba(255,255,255,.5);
+  }
+
+  .link-like-1 {
+    color: rgba(255,255,255);
+  }
+
+  .link-like-1:hover {
+    color: rgba(255,255,255);
+  }
+  
+  .link-like:hover {
+    color: rgba(255,255,255, .7);
   }
 </style>
