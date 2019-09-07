@@ -18,7 +18,7 @@
           </b-navbar-nav>
 
           <b-navbar-nav>
-            <b-nav-item @click="pushToComment()">留言</b-nav-item>
+            <b-nav-item @click="pushToComment()">留言板</b-nav-item>
           </b-navbar-nav>
 
            <b-navbar-nav class="ml-auto" v-if="user.id">
@@ -63,7 +63,7 @@
           this.$router.push({
             path: '/comments',
             query: {
-              page: 1
+              page: 1,
             }
           })
         }
@@ -120,5 +120,8 @@
   
   .link-like:hover {
     color: rgba(255,255,255, .7);
+  }
+  .body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI", "Helvetica Neue","PingFang SC","Microsoft              YaHei", "Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC", "Source Han Sans CN","Noto Sans SC","Source Han Sans TC", "Noto Sans CJK TC","Hiragino Sans GB",sans-serif;
   }
 </style>

@@ -59,7 +59,7 @@
     }
 
     .container {
-        width: 350px;
+        max-width: 350px;
         margin: 200px auto;
         display: flex;
         justify-content: space-between;
