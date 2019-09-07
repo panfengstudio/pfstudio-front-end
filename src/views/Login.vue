@@ -33,7 +33,7 @@
 
         },
         created() {
-
+            
         },
     }
 </script>
@@ -64,6 +64,6 @@
         display: flex;
         justify-content: space-between;
         border-radius: 2rem;
-        background: #f6f6f6;
+        background: white;
     }
 </style>

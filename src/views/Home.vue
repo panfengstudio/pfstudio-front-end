@@ -63,7 +63,9 @@
             }
         },
         created() {
-
+            if (this.$route.query.token!==null) {
+                this.$router.push("/");
+            }
         },
     }
 </script>
