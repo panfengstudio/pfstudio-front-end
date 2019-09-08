@@ -175,6 +175,7 @@ import { async } from 'q';
         background: white;
         width: 90%;
         margin: 1rem auto;
+        margin-bottom: 0;
         border-radius: 1rem;
         height: auto !important;
         padding-top: 0.5rem;

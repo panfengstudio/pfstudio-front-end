@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Comments from './views/Comments.vue'
+import GithubCallback from './views/GithubCallback.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +24,11 @@ export default new Router({
       path: '/comments',
       name: 'Comments',
       component: Comments,
+    },
+    {
+      path: '/githubcallback',
+      name: 'GithubCallback',
+      component: GithubCallback,
     }
   ]
 })
