@@ -1,7 +1,7 @@
 <template>
     <div class="container">
             <div class="icon-container">
-                <a href="https://github.com/login/oauth/authorize?client_id=8dda2f97a3f7ef156172&redirect_uri=http://localhost:8080/githubcallback&scope=user&state=dedede"
+                <a href="https://github.com/login/oauth/authorize?client_id=8dda2f97a3f7ef156172&redirect_uri=https://pfstudio.ayang818.top/githubcallback&scope=user&state=dedede"
                     class="link"><span class="iconfont icon-git" id="github-icon"></span>
                     <p style="text-align: center;">Github登陆</p>
                 </a>
