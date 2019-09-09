@@ -17,7 +17,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 Vue.prototype.$http = axios.create({
   // baseURL: "http://localhost:1080"
-  baseURL: "http://pfstudio.ayang818.top:1080"
+  baseURL: "https://pfstudio.ayang818.top:1080"
 })
 
 new Vue({

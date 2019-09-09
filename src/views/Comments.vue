@@ -4,11 +4,11 @@
             <div class="block flex">
                 <el-avatar shape="square" :size="35" :src="comment.userMessage.avatarUrl"></el-avatar>
                 <p class="name">{{comment.userMessage.name}}</p>
+                <p class="time">{{comment.gmtCreated}}</p>
             </div>
 
             <div class="content-body">
                 <p class="content">{{comment.content}}</p>
-
                 <el-button type="danger" icon="el-icon-delete-solid" class="delete-button"
                     @click="deleteComment(comment.id)" v-if="comment.hasRight">删除</el-button>
             </div>
@@ -67,6 +67,12 @@ import { async } from 'q';
                     "/api/comments?" + "offset=" + ((routepage - 1) * 10) + "&limit=10"
                 const res = await this.$http.get(url);
                 this.comments = res.data;
+                for (let index = 0; index < this.comments.length; index++) {
+                    const gmtTime = this.comments[index].gmtCreated;
+                    const data = new Date(gmtTime);
+                    const list = data.toLocaleString().split(":");
+                    this.comments[index].gmtCreated = list[0]+":"+list[1];
+                }
             },
             linkGen(pageNum) {
                 return {
@@ -150,8 +156,7 @@ import { async } from 'q';
     }
 
     .name {
-        font-size: 15px;
-        font-weight: lighter;
+        font-size: 1rem;
         color: rgba(0, 0, 0, .7);
         margin-left: 5px;
     }
@@ -197,5 +202,11 @@ import { async } from 'q';
     }
     .submit-button {
         margin: 1rem 10% !important;
+    }
+    .time {
+        margin-left: 1rem;
+        font-size: 1rem;
+        vertical-align: middle;
+        font-weight: lighter;
     }
 </style>
