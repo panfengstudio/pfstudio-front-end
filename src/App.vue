@@ -14,11 +14,7 @@
 
         
           <b-navbar-nav>
-            <b-nav-item href='https://github.com/pfstudio' target="_blank">开源1.0</b-nav-item>
-          </b-navbar-nav>
-
-          <b-navbar-nav>
-            <b-nav-item href='https://github.com/panfengstudio' target="_blank">开源2.0</b-nav-item>
+            <b-nav-item href='https://github.com/pfstudio' target="_blank">开源项目</b-nav-item>
           </b-navbar-nav>
 
           <b-navbar-nav>
