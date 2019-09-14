@@ -30,7 +30,7 @@
         <b-row class="introduce">
             <b-col cols="12"  md="3" class="d-block block">
                 <span class="iconfont icon-yanjiufangxiang" id="search"></span>
-                <em><br>多元的研究方向(机器学习, Web开发, 数学建模等等)</em>
+                <em><br>多元的研究方向(机器学习,Web开发,数学建模等)</em>
             </b-col>
             <b-col cols="12"  md="3" class="d-block block">
                 <span class="iconfont icon-fenxiang" id="share"></span>
